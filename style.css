@@ -1,0 +1,43 @@
+:root{
+    --yellow:#faa30c;
+    --gray: #f5f4f4;
+    --darkgray: #272727;
+    --radius: 25px;
+    --radius2: 10px; 
+    font-family: 'Roboto', sans-serif;
+}
+
+* {
+    /* border: red solid 1px; */
+    box-sizing: border-box;
+}
+
+body,html {
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    font-size: 1.2rem;
+}
+
+h2, h3{
+    font-size: 1rem;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr) 4fr minmax(300px, 1fr);
+    grid-template-areas: 
+    "menu   main contact";
+    height: 100vh;
+}
+
+.left{
+    background-color: var(--darkgray);
+    color: white;
+    font-weight: 900;
+    padding: 30px;
+    grid-area: menu;
+}
+
