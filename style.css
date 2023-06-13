@@ -1,9 +1,10 @@
 :root{
     --yellow:#faa30c;
+    --purple:#fa0cce;
     --gray: #f5f4f4;
     --darkgray: #272727;
     --radius: 25px;
-    --radius2: 10px; 
+    --radius2: 10px;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -18,7 +19,7 @@ body,html {
 }
 
 h1{
-    font-size: 1.2rem;
+    font-size: 3rem;
 }
 
 h2, h3{
@@ -29,15 +30,124 @@ h2, h3{
     display: grid;
     grid-template-columns: minmax(300px, 1fr) 4fr minmax(300px, 1fr);
     grid-template-areas: 
-    "menu   main contact";
+    "menu main contact";
     height: 100vh;
 }
 
-.left{
+ul{
+    padding: 0;
+}
+
+.menu{
     background-color: var(--darkgray);
     color: white;
     font-weight: 900;
     padding: 30px;
     grid-area: menu;
+    position: relative;
+}
+
+.icon{
+    display: flex;
+    justify-content: center;
+}
+
+.icon h1{
+    font-size: 8rem;
+    line-height: 40%;
+}
+
+.icon h1:first-child{
+    position: absolute;
+    color: var(--purple);
+
+    animation-name: logo-right;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+.icon h1:last-child{
+    position: absolute;
+    color: var(--yellow);
+    opacity: 50%;
+    animation-name: logo-left;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+@keyframes logo-right {
+    0% {left: 42%;     opacity: 0%;}
+    50% {left: 36%; opacity: 50%}
+    100% {left: 42%; opacity: 0%}
+}
+
+@keyframes logo-left {
+    0% {right: 42%; opacity: 0%}
+    50% {right: 36%; opacity: 50%}
+    100% {right: 42%; opacity: 0%}
+}
+
+.navbar{
+    margin: 90px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 30%;
+}
+
+.menu li {
+    margin-bottom: 20px;
+    list-style: none;
+    text-align: center;
+}
+ 
+.social{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.footer{
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 30px;
+    left: 50%;  
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%)
+}
+
+.main{
+    background-color: var(--lightgray);
+    color: var(--darkgray);
+    grid-area: main;
+    padding: 30px;
+}
+
+.portfolio{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.card{
+    background-color: white;
+    border-radius: var(--radius2);
+    padding: 20px;
+    box-shadow: 3px 3px 3px rgb(0 0 0 / 0.1);
+    border-bottom: 10px solid var(--darkgray);
+    margin-bottom: 20px;
+    height: 25vh;
+}
+
+.contact{
+    background-color: var(--darkgray);
+    color: white;
+    font-weight: 900;
+    padding: 30px;
+    grid-area: contact;  
 }
 
