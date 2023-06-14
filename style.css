@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
 :root{
     --yellow:#faa30c;
     --purple:#fa0cce;
-    --gray: #f5f4f4;
-    --darkgray: #272727;
+    --lightgray: #f3f3f3;
+    --darkgray: #313131;
     --radius: 25px;
     --radius2: 10px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 
 * {
@@ -16,6 +18,7 @@
 body,html {
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 h1{
@@ -28,9 +31,9 @@ h2, h3{
 
 .container{
     display: grid;
-    grid-template-columns: minmax(300px, 1fr) 4fr minmax(300px, 1fr);
+    grid-template-columns: minmax(300px, 1fr) 4fr;
     grid-template-areas: 
-    "menu main contact";
+    "menu main";
     height: 100vh;
 }
 
@@ -52,22 +55,21 @@ ul{
     justify-content: center;
 }
 
-.icon h1{
+.icon span{
     font-size: 8rem;
     line-height: 40%;
 }
 
-.icon h1:first-child{
+.icon span:first-child{
     position: absolute;
     color: var(--purple);
-
     animation-name: logo-right;
     animation-duration: 15s;
     animation-iteration-count: infinite;
     animation-direction: alternate-reverse;
 }
 
-.icon h1:last-child{
+.icon span:last-child{
     position: absolute;
     color: var(--yellow);
     opacity: 50%;
@@ -79,13 +81,13 @@ ul{
 
 @keyframes logo-right {
     0% {left: 42%;     opacity: 0%;}
-    50% {left: 36%; opacity: 50%}
+    50% {left: 38%; opacity: 30%}
     100% {left: 42%; opacity: 0%}
 }
 
 @keyframes logo-left {
     0% {right: 42%; opacity: 0%}
-    50% {right: 36%; opacity: 50%}
+    50% {right: 38%; opacity: 30%}
     100% {right: 42%; opacity: 0%}
 }
 
@@ -123,14 +125,60 @@ ul{
     color: var(--darkgray);
     grid-area: main;
     padding: 30px;
+    overflow-y: scroll;
+}
+
+.intro{
+    height: 100svh;
+    height:100vh;
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    gap: 30px;
+    grid-template-areas: "title" "skills";
+    margin-top: 30px;
+}
+
+.title{
+    font-size: 4rem;
+    grid-area: title;
+}
+
+.skills {
+	grid-area: skills;
+	display: flex;
+	font-size: 1rem;
+	align-items: start;
+	gap: 20px;
+}
+.skills-card{
+    background-color: white;
+    border-radius: var(--radius2);
+    padding: 20px;
+    box-shadow: 3px 3px 3px rgb(0 0 0 / 0.1);
+    border-bottom: 10px solid var(--darkgray);
+    margin-bottom: 20px;
 }
 
 .portfolio{
+    height: 100svh;
+    height:100vh;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 30px;
+    grid-template-areas: "title2" "cards";
+    grid-template-rows: 1fr 3fr;
     margin-top: 30px;
+}
+
+.title2{
+    font-size: 4rem;
+    grid-area: title2;
+}
+
+.portfolio-cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-area: cards;
+    gap: 30px;
+    height: 90%;
 }
 
 .card{
@@ -139,15 +187,45 @@ ul{
     padding: 20px;
     box-shadow: 3px 3px 3px rgb(0 0 0 / 0.1);
     border-bottom: 10px solid var(--darkgray);
-    margin-bottom: 20px;
-    height: 25vh;
 }
 
 .contact{
-    background-color: var(--darkgray);
-    color: white;
-    font-weight: 900;
+    height: 100vh;
     padding: 30px;
-    grid-area: contact;  
+    display: grid;
+    grid-template-areas: "title3" "form";
+    grid-template-rows: 1fr 3fr;
 }
 
+.title3{
+    grid-area: title3;
+}
+
+.form{
+    grid-area: form;
+}
+
+
+/* Scroll behaviour */
+
+@media (min-height: 30em) {
+    .main {
+      scroll-snap-type: y mandatory;
+      height: 100vh;
+      overflow-y: scroll;
+    }
+  }
+  
+  .section {
+    position: relative;
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  @media (min-height: 30em) {
+    .section {
+      height: 100vh;
+    }
+  }
