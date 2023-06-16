@@ -19,21 +19,27 @@
         <span class="logo">c</span>
     </div>
     <ul class="navbar">
-        <li class="list">Bio</li>
-        <li class="list">Projects</li>
-        <li class="list">Contact</li>
+        <li class="list"><a href="#intro" class="links">Bio</a></li>
+        <li class="list"><a href="#portfolio" class="links">Projects</a></li>
+        <li class="list"><a href="#contact" class="links">Contact</a></li>
     </ul>
 
     <div class="buttons">
         <ul class="social">
             <li class="social-list">
-                <img src="img/Github_white.svg" alt="Github">
+                <a href="" class="social-icon">
+                    <img src="img/Github_white.svg" alt="Github">
+                </a>
             </li>
             <li class="social-list">
-                <img src="img/Instagram_white.svg" alt="Instagram">
+                <a href="" class="social-icon">
+                    <img src="img/Instagram_white.svg" alt="Instagram">
+                </a>
             </li>
             <li class="social-list">
-                <img src="img/Gmail_white.svg" alt="Gmail">
+                <a href="" class="social-icon">
+                    <img src="img/Gmail_white.svg" alt="Gmail">
+                </a>
             </li>
         </ul>
     </div>
@@ -43,53 +49,119 @@
 </div>
 
 <div class="main">
-<div class="section">
+<div class="section" id="intro">
     <div class="intro">
         <p class="title title1">Hola, People! <br>
         I am Carlos Cordero.<br></p>
-        <div class="skills">
-            <div class="skills-card">Puzzle-solving coder</div>
-            <div class="skills-card">Brainstorm extraordinaire</div>
-            <div class="skills-card">Dreamer</div>
+        <div class="intro-cards">
+            <div class="skills">
+                <div class="skills-card">Puzzle-solving coder</div>
+                <div class="skills-card">Brainstorm extraordinaire</div>
+                <div class="skills-card">Dreamer</div>
+            </div>
+
+            <div class="languages">
+                <div class="skills-card">HTML</div>
+                <div class="skills-card">CSS</div>
+                <div class="skills-card">JavaScript</div>
+                <div class="skills-card">Python</div>
+                <div class="skills-card">English</div>
+                <div class="skills-card">Spanish</div>
+            </div>
         </div>
     </div>
 </div>
+
 <div class="section">
-    <div class="portfolio">
-        <p class="title title2">I love puzzles<br>
+    <div class="portfolio" id="portfolio">
+        <p class="title title2">I love puzzles,<br>
             and these are some of my projects<br></p>
             
         <div class="portfolio-cards">
-        <div class="card">1</div>
-        <div class="card">2</div>
-        <div class="card">3</div>
-        <div class="card">1</div>
-        <div class="card">2</div>
-        <div class="card">3</div>
+            <div class="card">
+                <img class="image__img" src="img/green.jpg" alt="Bricks">
+                <div class="image__overlay">
+                    <div class="image__title">Church Choir Programming Software</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img class="image__img" src="img/green.jpg" alt="Bricks">
+                <div class="image__overlay">
+                    <div class="image__title">Composer Competition Calendar</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img class="image__img" src="img/JC.png" alt="Bricks">
+                <div class="image__overlay">
+                    <div class="image__title">Joys and Concerns Form</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img class="image__img" src="img/green.jpg" alt="Bricks">
+                <div class="image__overlay">
+                    <div class="image__title">Finale Templates for Composers</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img class="image__img" src="img/green.jpg" alt="Bricks">
+                <div class="image__overlay">
+                    <div class="image__title">Concert Planning Tool</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img class="image__img" src="img/green.jpg" alt="Bricks">
+                <div class="image__overlay">
+                    <div class="image__title">Choral Mockup</div>
+                </div>
+            </div>
+
         </div>
-    </div>
-</div>    
+        </div>
+
+    </div> 
+
 <div class="section">
-    <div class="contact">
-        <p class="title title3">I live in Austin, TX<br>
-        and I hope to hear from you!<br></p>
+    <div class="contact" id="contact">
+        <p class="title title3">I live in Austin, TX,<br>
+        let's connect!</p>
+    <form action="" method="get">  
+         
         <div class="form">
+
+            <div class="form-row">
             <label for="name">Name</label>
-            <input type="text" name="name" value="Name">
+            <input type="text" name="name" placeholder="Name">
+            </div> 
 
+            <div class="form-row">
             <label for="email">Email</label>
-            <input type="email" name="email" value="Email">
-
-            <label for="message">Message</label>
-            <input type="text" name="message" value="Message">
-
-            <label for="submit">Submit</label>
-            <input type="button" name="button" value="Button">
-
+            <input type="email" name="email" placeholder="Email">
+            </div>    
         </div>
+
+        <div class="form-textarea">
+            <label for="textarea">What can I help you solve?</label>
+            <input type="textarea" name="textarea" id="textarea" placeholder="Message" required >
+        </div>
+        
+        <div class="form-row">
+            <input type="button" name="button" value="Submit">
+        </div>
+
+        
+
+    </form>
+
     </div>
 </div>
+
 </div>
+
 </div>
 
 <script rel="text/javascript" src="script.js"></script>       
