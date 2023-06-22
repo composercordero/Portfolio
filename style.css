@@ -50,6 +50,10 @@ ul{
     position: relative;
 }
 
+.burger {
+    display: none;
+}
+
 .links{
     text-decoration: none;
     color: white;
@@ -134,7 +138,7 @@ ul{
     transform: translateX(-50%)
 }
 
-/* MAIN */
+/* ---- MAIN ---- */
 
 .main{
     background-color: var(--lightgray);
@@ -163,20 +167,19 @@ ul{
     margin-top: 30px;
 }
 
-.skills {
-	grid-area: skills;
+.skills, .languages {
 	display: flex;
 	font-size: 1rem;
 	align-items: start;
 	gap: 20px;
 }
 
+.skills {
+	grid-area: skills;
+}
+
 .languages{
     grid-area: languages;
-	display: flex;
-	font-size: 1rem;
-	align-items: start;
-	gap: 20px;
 }
 
 .skills-card{
@@ -189,18 +192,20 @@ ul{
 }
 
 .skills-card:hover{
-    transform: translateY(-10px);
     transition: 0.2s ease-in;
     border-top: 15px solid var(--yellow);
+    animation: 0.25s infinite alternate float;
 }
 
-.carlos{
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 35%;
-    filter: saturate(0);
-    box-shadow: none;
+@keyframes float{
+    0%{transform: translateY(0px);}
+    100%{transform: translateY(-10px);}
+}
+
+/* ---- PORTFOLIO ---- */
+
+.portfolio{
+    padding-top: 20px;
 }
 
 .title2{
@@ -210,8 +215,9 @@ ul{
 
 .portfolio-cards{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 300px);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: repeat(2, 200px);
+    grid-auto-rows: 200px;
     grid-area: cards;
     gap: 30px;
     margin: 30px 0;
@@ -229,7 +235,7 @@ ul{
     transition: ease-in-out 0.2s;
 }
 
-/* CARD OVERLAY EFFECT */
+/* ---- CARD OVERLAY EFFECT ---- */
 
 .image__img {
     width:100%;
@@ -279,8 +285,7 @@ ul{
 /* CONTACT */
 
 .contact{
-    padding-bottom: 60px ;
-    height: 100vh;
+    height: 94vh;
 }
 
 .title3{
@@ -316,7 +321,7 @@ label{
 input{
     border-radius: var(--radius);
     border: 1px solid var(--darkgray);
-    padding: 15px 0 15px 10px;
+    padding: 15px;
     appearance: none;
 }
 
@@ -325,26 +330,103 @@ input[type=button]{
     width: 50%;
 }
 
-/* SCROLL */
+/* ---- MEDIA QUERIES ---- */
 
-/* @media (min-height: 30em) {
-.main {
-      scroll-snap-type: y mandatory;
-      height: 100vh;
-      overflow-y: scroll;
-    }
+@media screen and (max-width: 1024px) { 
+    
 }
 
-.section {
-    position: relative;
-    scroll-snap-align: center;
-    display: flex;
+@media screen and (max-width: 800px) { 
+ 
+.container{
+    grid-template-rows: 80px 4fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "menu" "main";
+}
+
+.menu{
+    padding: 20px;
+}
+
+
+.links, .social, .footer {
+    display: none;
+}
+
+.icon{
+    justify-content: start;
+}
+
+.icon span{
+    font-size: 4rem;
+}
+
+.icon span:first-child, 
+.icon span:last-child{
+    display: none;
+}
+
+.burger {
+    color: white;
+    padding: 20px 20px;
+    text-decoration: none;
+    font-size: 30px;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+/* ---- MAIN ----*/
+   
+.intro{
+    height: auto;
+}
+
+.title, .title2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.intro-cards{
+    gap: 0;
+}
+
+.skills-card{
+    padding: 15px;
+}
+
+.skills, .languages {
     flex-direction: column;
-    min-height: 100vh;
+	gap: 10px;
+    align-items: stretch;
+    text-align: center;
 }
 
-@media (min-height: 30em) {
-.section {
-      height: 100vh;
-    }
-  } */
+/* ---- PORTFOLIO / CONTACT  ---- */
+
+.portfolio-cards, .contact{
+    height: auto;
+}
+
+.form{
+    gap: 0;
+}
+
+.form-textarea, .form-row{
+    width: 100%;
+}
+
+input[type=button]{
+    width: auto;
+    padding: 15px;
+}
+
+}
+
+
+
+
+
