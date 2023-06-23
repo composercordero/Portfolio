@@ -309,6 +309,7 @@ label{
     justify-content: flex-start;
     flex-flow: column wrap;
     width: 20%;
+    margin-right: calc(3em + 20px);
 }
 
 .form-textarea {
@@ -333,25 +334,25 @@ input[type=button]{
 /* ---- MEDIA QUERIES ---- */
 
 @media screen and (max-width: 1024px) { 
-    
-}
 
-@media screen and (max-width: 800px) { 
- 
 .container{
     grid-template-rows: 80px 4fr;
     grid-template-columns: 1fr;
     grid-template-areas: 
     "menu" "main";
+    transition: 0.5s;
 }
 
 .menu{
     padding: 20px;
 }
 
-
-.links, .social, .footer {
+.navbar, .social, .footer {
     display: none;
+}
+
+.navbar{
+    margin-top: 20px;
 }
 
 .icon{
@@ -377,7 +378,33 @@ input[type=button]{
     right: 0;
     top: 0;
 }
+    
+/* ---- PORTFOLIO / CONTACT  ---- */
 
+.portfolio-cards, .contact{
+    height: auto;
+}
+
+.form{
+    gap: 0;
+}
+
+.form-row {
+    margin-right: 0;
+}
+
+.form-textarea, .form-row{
+    width: 100%;
+}
+
+input[type=button]{
+    width: auto;
+    padding: 15px;
+}
+}
+
+@media screen and (max-width: 800px) { 
+ 
 /* ---- MAIN ----*/
    
 .intro{
@@ -404,26 +431,6 @@ input[type=button]{
     align-items: stretch;
     text-align: center;
 }
-
-/* ---- PORTFOLIO / CONTACT  ---- */
-
-.portfolio-cards, .contact{
-    height: auto;
-}
-
-.form{
-    gap: 0;
-}
-
-.form-textarea, .form-row{
-    width: 100%;
-}
-
-input[type=button]{
-    width: auto;
-    padding: 15px;
-}
-
 }
 
 
